@@ -1,4 +1,4 @@
-const CAR_PRODUCTOs = "cartProductsId";
+const CAR_PRODUCTOS = "cartProductsId";
 
 document.addEventListener("DOMContentLoaded" , () => {
     loadProducts();
@@ -33,7 +33,7 @@ async function loadProducts() {
                         <h5 class="card-title">${product.name}</h5>
                         <p class="card-text">${product.extraInfo}</p>
                         <p class="card-text">${product.price} $ / Unidad</p>
-                        <button type="button" class="btn btn-primary btn-cart">Añadir al carrito</button>
+                        <button type="button" class="btn btn-primary btn-cart" onClick="addProductCart(${product.id})">Añadir al carrito</button>
                     </div>
                 </div>
             </div>
@@ -56,5 +56,22 @@ function openCloseCart() {
             }
         }
     });
+
+}
+
+function addProductCart(idProduct) {
+    let arrayProductsId = []
+
+    let localStorageItems = localStorage.getItem(CAR_PRODUCTOS);
+
+    if (localStorageItems === null) {
+        arrayProductsId.push(idProduct);
+        localStorage.setItem(CAR_PRODUCTOS, arrayProductsId);
+    } else {
+        let productsId = localStorage.getItem(CAR_PRODUCTOS);
+        if (productsId.length > 0) {
+            
+        }
+    }
 
 }
