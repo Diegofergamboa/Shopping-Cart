@@ -43,5 +43,7 @@ async function loadProducts() {
 }
 
 function openCloseCart() {
-    console.log('Click');
+    const containerCartProduct = document.getElementsByClassName("cart-products[0]");
+    console.log(containerCartProduct);
+    
 }
