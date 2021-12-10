@@ -44,6 +44,6 @@ async function loadProducts() {
 
 function openCloseCart() {
     const containerCartProduct = document.getElementsByClassName("cart-products[0]");
-    console.log(containerCartProduct);
     
+    containerCartProduct.classList;
 }
