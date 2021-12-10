@@ -44,6 +44,17 @@ async function loadProducts() {
 
 function openCloseCart() {
     const containerCartProduct = document.getElementsByClassName("cart-products")[0];
-    console.log("indices")
-    console.log(containerCartProduct.classList);
+    
+    containerCartProduct.classList.forEach(item => {
+        if (item ==="hidden") {
+            containerCart.classList.remove("hidden");
+            containerCart.classList.add("active");
+            
+            if(item ==="active") {
+                containerCart.classList.remove("active");
+                containerCart.classList.add("hidden");
+            }
+        }
+    });
+
 }

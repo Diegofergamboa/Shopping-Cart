@@ -16,11 +16,11 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <img src="/img/logo.png" alt="tienda-logo" class="logo">
-            <div class="collapse navbar-collapse">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a href="./" class="nav-link">
-                            Home
+                        <a href="./" class="nav-link"
+                        >Home <span class="sr-only">(Current)</span>
                         </a>
                     </li>
                 </ul>
@@ -28,7 +28,8 @@
                     <button class="btn btn-secondary cart" type="button" onclick="openCloseCart()">
                         <img src="./img/cart.png" alt="carrito de compras">
                     </button>
-                    <div class="cart-products hidden"></div>
+                    <div class="cart-products hidden">
+                    </div>
                 </div>
             </div>
         </div>
