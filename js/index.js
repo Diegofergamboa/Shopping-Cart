@@ -43,7 +43,7 @@ async function loadProducts() {
 }
 
 function openCloseCart() {
-    const containerCartProduct = document.getElementsByClassName("cart-products")[0];
+    const containerCart = document.getElementsByClassName("cart-products")[0];
     
     containerCart.classList.forEach(item => {
         if (item ==="hidden") {
