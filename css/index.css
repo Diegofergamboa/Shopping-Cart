@@ -14,10 +14,12 @@ body {
 .navbar .logo {
     width: 50px;
 }
-
+.navbar .cart {
+    background-color: transparent;
+    border: 0;
+}
 .navbar .cart img {
     width: 30px;
-
 }
 
 .cart-container {
