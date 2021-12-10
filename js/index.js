@@ -41,3 +41,7 @@ async function loadProducts() {
     });
     document.getElementsByClassName("products")[0].innerHTML = html;
 }
+
+function openCloseCart() {
+    console.log('Click');
+}
