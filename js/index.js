@@ -43,7 +43,7 @@ async function loadProducts() {
 }
 
 function openCloseCart() {
-    const containerCartProduct = document.getElementsByClassName("cart-products[0]");
-    
-    containerCartProduct.classList;
+    const containerCartProduct = document.getElementsByClassName("cart-products")[0];
+    console.log("indices")
+    console.log(containerCartProduct.classList);
 }
