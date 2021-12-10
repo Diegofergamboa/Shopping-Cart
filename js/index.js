@@ -6,15 +6,18 @@ document.addEventListener("DOMContentLoaded" , () => {
 
 function getProductsDb () {
     const url = "../JSON/dbProducts.json";
-    fetch(url).then(response => {
+
+    return fetch(url)
+    .then(response => {
         return response.json();
     }).then((result) => {
-        console.log(result);
+        return result;
     }).catch((err) => {
-        
+        console.log('ERROR CON FETCH FUNCTION');
     });
 }
-function loadProducts() {
+async function loadProducts() {
     console.log("Función loadProducts ejecutada correctamente");
-    getProductsDb();
+    const products = await getProductsDb();
+    console.log(products);
 }
