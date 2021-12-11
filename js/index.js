@@ -70,8 +70,14 @@ function addProductCart(idProduct) {
     } else {
         let productsId = localStorage.getItem(CAR_PRODUCTOS);
         if (productsId.length > 0) {
-            
+            productsId += ',' + idProduct;
+        } else {
+            productsId = productsId;
         }
+    localStorage.setItem(CAR_PRODUCTOS, productsId);
     }
+}
 
+function loadProductCart() {
+    console.log('working on cargando en el carrito');
 }
