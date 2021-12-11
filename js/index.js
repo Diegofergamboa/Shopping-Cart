@@ -62,7 +62,7 @@ function openCloseCart() {
 function addProductCart(idProduct) {
     let arrayProductsId = []
 
-    let localStorageItems = localStorage.getItem(CAR_PRODUCTOS);
+    let localStorageItems = localStorage.getItem(CART_PRODUCTOS);
 
     if (localStorageItems === null) {
         arrayProductsId.push(idProduct);
@@ -92,9 +92,9 @@ async function loadProductCart() {
 
     let html = "";
     idProductsCart.forEach(id => {
-        product.forEach(product => {
+        products.forEach(product => {
 
-            if (id === product.id) {
+            if (id == product.id) {
 
                 html += `
                     <div class="cart-product">
@@ -112,9 +112,10 @@ async function loadProductCart() {
                             </p>
                         </div>
                     </div>
-                `
+                `;
             }
-        })
+        });
     });
 
+    document.getElementsByClassName("cart-products")[0].innerHTML = html ;
 }
