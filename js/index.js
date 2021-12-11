@@ -107,6 +107,9 @@ async function loadProductCart() {
                                 <button>-</button>
                                 <button>+</button>
                             </p>
+                            <p class="cart-product-delete">
+                                <button>Eliminar</button>
+                            </p>
                         </div>
                     </div>
                 `
