@@ -95,23 +95,24 @@ async function loadProductCart() {
         products.forEach(product => {
 
             if (id == product.id) {
+                const quantity = countDuplicatesId(id, idProductsSplit);
 
                 html += `
-                    <div class="cart-product">
-                        <img src="${product.image}" alt="${product.name}">
-                        <div class="class="cart-product-info">
-                            <span class="quantity">...</span>
-                            <p>${product.name}</p>
-                            <p>...</p>
-                            <p class="change-quantity">
-                                <button>-</button>
-                                <button>+</button>
-                            </p>
-                            <p class="cart-product-delete">
-                                <button>Eliminar</button>
-                            </p>
-                        </div>
+                <div class="cart-product">
+                    <img src="${product.image}" alt="${product.name}"/>
+                    <div "class="cart-product-info">
+                        <span class="quantity">...</span>
+                        <p>${product.name}</p>
+                        <p>...</p>
+                        <p class="change-quantity">
+                            <button>-</button>
+                            <button>+</button>
+                        </p>
+                        <p class="cart-product-delete">
+                            <button>Eliminar</button>
+                        </p>
                     </div>
+                </div>
                 `;
             }
         });
@@ -119,3 +120,13 @@ async function loadProductCart() {
 
     document.getElementsByClassName("cart-products")[0].innerHTML = html ;
 }
+
+function countDuplicatesId(id, arrayIds) {
+    let count = 0 ;
+    arrayIds.forEach(id => {
+        if (value == id) {
+            count++;
+        }
+    });
+    return count;
+} 
