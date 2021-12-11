@@ -96,14 +96,14 @@ async function loadProductCart() {
 
             if (id == product.id) {
                 const quantity = countDuplicatesId(id, idProductsSplit);
-
+                const totalPrice = product.price * quantity ;
                 html += `
-                <div class="cart-products">
+                <div class="cart-product">
                     <img src="${product.image}" alt="${product.name}"/>
                     <div "class="cart-product-info">
-                        <span class="quantity">...</span>
+                        <span class="quantity">${quantity}</span>
                         <p>${product.name}</p>
-                        <p>...</p>
+                        <p>${totalPrice.toFixed(2)}</p>
                         <p class="change-quantity">
                             <button>-</button>
                             <button>+</button>
