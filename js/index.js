@@ -98,7 +98,7 @@ async function loadProductCart() {
                 const quantity = countDuplicatesId(id, idProductsSplit);
 
                 html += `
-                <div class="cart-product">
+                <div class="cart-products">
                     <img src="${product.image}" alt="${product.name}"/>
                     <div "class="cart-product-info">
                         <span class="quantity">...</span>
