@@ -1,4 +1,4 @@
-const CAR_PRODUCTOS = "cartProductsId";
+const CART_PRODUCTOS = "cartProductsId";
 
 document.addEventListener("DOMContentLoaded" , () => {
     loadProducts();
@@ -66,18 +66,52 @@ function addProductCart(idProduct) {
 
     if (localStorageItems === null) {
         arrayProductsId.push(idProduct);
-        localStorage.setItem(CAR_PRODUCTOS, arrayProductsId);
+        localStorage.setItem(CART_PRODUCTOS, arrayProductsId);
     } else {
-        let productsId = localStorage.getItem(CAR_PRODUCTOS);
+        let productsId = localStorage.getItem(CART_PRODUCTOS);
         if (productsId.length > 0) {
             productsId += ',' + idProduct;
         } else {
             productsId = productsId;
         }
-    localStorage.setItem(CAR_PRODUCTOS, productsId);
+    localStorage.setItem(CART_PRODUCTOS, productsId);
     }
 }
 
-function loadProductCart() {
-    console.log('working on cargando en el carrito');
+async function loadProductCart() {
+    const products = await getProductsDb();
+    
+    //* Convertimos el resultado del LocalStorage en un array.
+
+    const localStorageItems = localStorage.getItem(CART_PRODUCTOS);
+    const idProductsSplit = localStorageItems.split(',');
+
+    //* Eliminar los id`s duplicados.
+
+    const idProductsCart = Array.from(new (Set(idProductsSplit)));
+
+    let html = "";
+    idProductsCart.forEach(id => {
+        product.forEach(product => {
+
+            if (id === product.id) {
+
+                html += `
+                    <div class="cart-product">
+                        <img src="${product.image}" alt="${product.name}">
+                        <div class="class="cart-product-info">
+                            <span class="quantity">...</span>
+                            <p>${product.name}</p>
+                            <p>...</p>
+                            <p class="change-quantity">
+                                <button>-</button>
+                                <button>+</button>
+                            </p>
+                        </div>
+                    </div>
+                `
+            }
+        })
+    });
+
 }
