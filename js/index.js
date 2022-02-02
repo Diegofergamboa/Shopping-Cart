@@ -60,75 +60,15 @@ function openCloseCart() {
 }
 
 function addProductCart(idProduct) {
-    console.log('Añadiendo el producto con le ID: '+ idProduct);
+    let arrayProductsId = [];
+    let localStorageItems = localStorage.getItem("CAR_PRODUCTOS");
+
+    if (localStorageItems === null) {
+        arrayProductsId.push(idProduct);
+        localStorage.setItem(CART_PRODUCTOS, arrayProductsId);
+    } else {
+            console.log('ya hay contenido en el localstorage');
+        }
 }
-//     let arrayProductsId = []
 
-//     let localStorageItems = localStorage.getItem(CART_PRODUCTOS);
 
-//     if (localStorageItems === null) {
-//         arrayProductsId.push(idProduct);
-//         localStorage.setItem(CART_PRODUCTOS, arrayProductsId);
-//     } else {
-//         let productsId = localStorage.getItem(CART_PRODUCTOS);
-//         if (productsId.length > 0) {
-//             productsId += ',' + idProduct;
-//         } else {
-//             productsId = productsId;
-//         }
-//     localStorage.setItem(CART_PRODUCTOS, productsId);
-//     }
-// }
-
-// async function loadProductCart() {
-//     const products = await getProductsDb();
-    
-//     //* Convertimos el resultado del LocalStorage en un array.
-
-//     const localStorageItems = localStorage.getItem(CART_PRODUCTOS);
-//     const idProductsSplit = localStorageItems.split(',');
-
-//     //* Eliminar los id`s duplicados.
-
-//     const idProductsCart = Array.from(new (Set(idProductsSplit)));
-
-//     let html = "";
-//     idProductsCart.forEach(id => {
-//         products.forEach(product => {
-
-//             if (id == product.id) {
-//                 const quantity = countDuplicatesId(id, idProductsSplit);
-//                 const totalPrice = product.price * quantity ;
-//                 html += `
-//                 <div class="cart-product">
-//                     <img src="${product.image}" alt="${product.name}"/>
-//                     <div "class="cart-product-info">
-//                         <span class="quantity">${quantity}</span>
-//                         <p>${product.name}</p>
-//                         <p>${totalPrice.toFixed(2)}</p>
-//                         <p class="change-quantity">
-//                             <button>-</button>
-//                             <button>+</button>
-//                         </p>
-//                         <p class="cart-product-delete">
-//                             <button>Eliminar</button>
-//                         </p>
-//                     </div>
-//                 </div>
-//                 `;
-//             }
-//         });
-//     });
-
-//     document.getElementsByClassName("cart-products")[0].innerHTML = html ;
-// }
-
-// function countDuplicatesId(id, arrayIds) {
-//     let count = 0 ;
-//     arrayIds.forEach(id => {
-//         if (value == id) {
-//             count++;
-//         }
-//     });
-//     return count;
-// } 
